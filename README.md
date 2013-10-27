@@ -20,7 +20,7 @@ These instructions begin from a few assumptions:
 
 ## Quickstart
 
-TBD
+The directory `citekit-demos` contains examples HTML files that show you to configure pages for resolving CTS URNs to passages of text, and CITE urns to images and data-objects.
 
 ## Notes for Deployment
 
@@ -34,10 +34,6 @@ But if your page is already using jQuery, you won’t want the “normal” way,
 
 That will load a version of CITEKit that will use the copy of jQuery that your page has already loaded.
 
-## Specifying Service Addresses
+## Credits
 
-CITEKit needs to know the addresses (URLs) of services that can deliver content based on URN citations. Each CITEKit html page needs to include a section of HTML configuring these services.
-
-The configuration is in the form of an HTML `<ul></ul>` element:
-
-TBD
+CITEKit is free software from C. Blackwell and N. Smith.
