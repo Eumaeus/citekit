@@ -1,0 +1,45 @@
+apply plugin: "base"
+apply plugin: "maven"
+
+if (hasProperty('pub')) {
+    System.err.print "Using configuration data from ${pub}"
+    File confFile = new File(pub)
+    if (! confFile.exists()) {
+        throw new Exception("No publication configuration file ${pub} found.")
+    } else {
+        apply from: pub
+    }
+
+} else {
+    File confFile = new File("pub.gradle")
+    if (! confFile.exists()) {
+        throw new Exception("No publication configuration file ${confFile} found.")
+    } else {
+        println "Using default configuration in 'pub.gradle'"
+        apply from: "pub.gradle"
+    }
+}
+
+version = "0.0.7"
+group = "org.homermultitext"
+
+
+
+task zipKit(type: Zip) {
+     description = "Builds zip file of citekit library."
+     from (file("citekit"))
+}
+
+
+artifacts {
+    archives zipKit
+}
+
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: nexusRepo) {                   
+            authentication (userName: nexusUser, password: nexusPassword)
+        }
+    }
+}
