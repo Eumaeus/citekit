@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>CITEKit Tester</title>
+	<link type="text/css" rel="stylesheet" href="http://folio.furman.edu/images/swiss.css"/>
+	<script type="text/javascript" src="http://folio.dyndns-web.com/citeservlet/citekit/js/cite-jq.js"> </script> <meta name="copyright" content="2013 C.W. Blackwell, D.N. Smith, CC-License/by-nc-sa/3.0"/>
+	<meta name="encoding" content="UTF-8"/>
+	<meta name="format" content="complete"/>
+</head>
+<body>
+
+<h1 id="cite-kit">CITE-Kit Tester · Basic Texts</h1>
+
+<h2>Links</h2>
+<p>Link to default text service: <a href="urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25" class="cite-text" >urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25</a></p>
+<p>Link to named text service: <a href="urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25" class="cite-text svc-beta-cts " >urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25</a></p>
+<p>Link to named text service: <a href="urn:cts:greekLit:tlg0011.tlg004.fu02:1-25" class="cite-text svc-folio-cts" >urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25</a></p>
+
+<h2>Resolved Citations</h2>
+
+<h3>Default Service</h3>
+<blockquote class="cite-text" cite="urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25">urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25 (default service)</blockquote>
+
+<h3>Named Service</h3>
+<blockquote class="cite-text svc-beta-cts" cite="urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25">urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25 (named service)</blockquote>
+
+<h3>Named Service</h3>
+<blockquote class="cite-text svc-folio-cts" cite="urn:cts:greekLit:tlg0011.tlg004.fu02:1-25">urn:cts:greekLit:tlg0011.tlg004.fu02:1-25 (named service)</blockquote>
+
+
+<ul id="citekit-sources">
+	<!-- Beta Server in Houston: citeservlet -->
+    <li class="citekit-source cite-text citekit-default" id="svc-beta-cts">http://beta.hpcc.uh.edu/tomcat/hmtcite/texts</li>
+    <li class="citekit-source cite-image citekit-default" id="svc-beta-image">http://beta.hpcc.uh.edu/tomcat/hmtcite/images</li>
+	<li class="citekit-source cite-collection citekit-default" id="svc-beta-collection">
+			<ul>
+					<li class="citekit-coll-url">http://beta.hpcc.uh.edu/tomcat/hmtcite/collections</li> // url to the collection service
+					<li class="citekit-img-source">svc-beta-image</li> // use this image service to resolve image URNs in collection fields
+					<li class="citekit-coll-source">svc-beta-collection</li> // use this collection service for links to URNs in collection fields
+					<li class="citekit-cts-source">svc-beta-cts</li>// use this text service for links to text URNs in collection fields
+			</ul>
+	</li>
+	<!-- Folio Server at Furman: citeservlet -->
+	<li class="citekit-source cite-text" id="svc-folio-cts">http://folio.furman.edu/foliocite/texts</li>
+    <li class="citekit-source cite-image" id="svc-folio-image">http://folio.furman.edu/foliocite/images</li>
+	<li class="citekit-source cite-collection" id="svc-folio-collection">
+			<ul>
+					<li class="citekit-coll-url">http://folio.furman.edu/foliocite/collections</li>
+					<li class="citekit-img-source">svc-folio-image</li>
+					<li class="citekit-coll-source">svc-folio-collection</li>
+					<li class="citekit-cts-source">svc-folio-cts</li>
+			</ul>
+	</li>
+	<!-- Servlet CiteKit -->
+	<li class="citekit-sourt cite-text" id="servlet-cts">http://folio.dyndns-web.com/citeservlet/texts</li>
+</ul>
+
+</div>
+
+
+</body>
+</html>

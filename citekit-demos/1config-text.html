@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>CITEKit Tester · 1 Config, Text</title>
+	<link type="text/css" rel="stylesheet" href="http://folio.furman.edu/images/swiss.css"/>
+	<script type="text/javascript" src="http://folio.dyndns-web.com/citekit/js/cite-jq.js"> </script>
+	<meta name="copyright" content="2013 C.W. Blackwell, D.N. Smith, CC-License/by-nc-sa/3.0"/>
+	<meta name="encoding" content="UTF-8"/>
+	<meta name="format" content="complete"/>
+</head>
+<body>
+
+<h1 id="cite-kit">CITE-Kit Tester · Only 1 CTS Service Configured</h1>
+
+<h2>Links</h2>
+<p>Link to default text service: <a href="urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25" class="cite-text" >urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25</a></p>
+<p>Link to named text service: <a href="urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25" class="cite-text svc-beta-cts " >urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25</a></p>
+
+<h2>Resolved Citations</h2>
+
+<h3>Default Service</h3>
+<blockquote class="cite-text" cite="urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25">urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25 (default service)</blockquote>
+
+<h3>Named Service</h3>
+<blockquote class="cite-text svc-beta-cts" cite="urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25">urn:cts:greekLit:tlg0012.tlg001.msA:2.1-2.25 (named service)</blockquote>
+
+<h3>Bad Query</h3>
+<p>This URN does not exist at this service. CITEKit should fail gracefully.</p>
+<blockquote class="cite-text svc-beta-cts" cite="urn:cts:greekLit:tlg0011.tlg004.fu02:1-25">urn:cts:greekLit:tlg0011.tlg004.fu02:1-25</blockquote>
+
+
+
+<ul id="citekit-sources">
+	<!-- Beta Server in Houston: citeservlet -->
+    <li class="citekit-source cite-text citekit-default" id="svc-beta-cts">http://beta.hpcc.uh.edu/tomcat/hmtcite/texts</li>
+</ul>
+
+</div>
+
+
+</body>
+</html>

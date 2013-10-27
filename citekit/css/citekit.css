@@ -1,0 +1,44 @@
+
+/* Console */
+
+.citekit_console_show_hide_toggle, .citekit_console > p {
+}
+
+.citekit_console {
+	border: 1px solid #bbb;
+	background-color: #eee;
+	font-family: Helvetica, Arial, sans;
+	font-size: 10pt;
+	color: #555;
+	padding: 5px;
+}
+
+.citekit_console .show_hide {
+	display: none;
+}
+
+.citekit_console_text, .citekit_console_data {
+	border: 1px solid #bbb;
+	padding: 5px;
+	margin: 5px;
+}
+
+.citekit_console th {
+	font-weight: normal;
+}
+
+.citekit_console td, .citekit_console th {
+	min-width: 16em;
+	border: 1px solid #bbb;
+}
+
+/* Configuration */
+
+
+
+.footnotes {
+		clear: both;
+		margin-top: 1em;
+}
+
+

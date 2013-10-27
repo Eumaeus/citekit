@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>CITEKit Tester</title>
+	<link type="text/css" rel="stylesheet" href="http://folio.furman.edu/images/swiss.css"/>
+	<script type="text/javascript" src="http://folio.dyndns-web.com/citekit/js/cite-jq.js"> </script>
+	<meta name="copyright" content="2013 C.W. Blackwell, D.N. Smith, CC-License/by-nc-sa/3.0"/>
+	<meta name="encoding" content="UTF-8"/>
+	<meta name="format" content="complete"/>
+</head>
+<body>
+
+<h1 id="cite-kit">CITE-Kit Tester · Basic Images</h1>
+
+<h2>Links</h2>
+<p>Link to default image service: <a href="urn:cite:hmt:vaimg.VA012RN-0013" class="cite-image" >urn:cite:hmt:vaimg.VA012RN-0013</a></p>
+<p>Link to named image service: <a href="urn:cite:hmt:vaimg.VA012RN-0013" class="cite-image svc-beta-img " >urn:cite:hmt:vaimg.VA012RN-0013</a></p>
+<p>Link to named image service: <a href="urn:cite:fufolioimg:Caroliniana.Catesby_HS212_003_0509" class="cite-image svc-folio-image" >urn:cite:fufolioimg:Caroliniana.Catesby_HS212_003_0509</a></p>
+
+<h2>Embedded images with &lt;img&gt;</h2>
+<p>From default image service: <img src="urn:cite:hmt:vaimg.VA012RN-0013" class="cite-image" /></p>
+<p>From named image service (width: 600): <img src="urn:cite:hmt:vaimg.VA012RN-0013" class="cite-image svc-beta-image-small " /></p>
+<p>From named image service (width: 8000): <img src="urn:cite:fufolioimg:Caroliniana.Catesby_HS212_003_0509@0.125,0.125,0.125,0.125" class="cite-image svc-folio-image-big" /></p>
+
+
+<h2>Resolved Citations</h2>
+
+<h3>Default Service - no width specified</h3>
+<blockquote class="cite-image" cite="urn:cite:hmt:vaimg.VA012RN-0013">urn:cite:hmt:vaimg.VA012RN-0013 (default service)</blockquote>
+
+<h3>Named Service - width 600</h3>
+<blockquote class="cite-image svc-beta-image-small" cite="urn:cite:hmt:vaimg.VA012RN-0013">urn:cite:hmt:vaimg.VA012RN-0013 (named service)</blockquote>
+
+
+<h3>Named Service - width 600</h3>
+<blockquote class="cite-image svc-folio-image-small" cite="urn:cite:fufolioimg:Caroliniana.Catesby_HS212_003_0509">urn:cite:fufolioimg:Caroliniana.Catesby_HS212_003_0509 (named service)</blockquote>
+
+<h2>Resolved Citations, image+roi</h2>
+
+<h3>Default Service - no width specified</h3>
+<blockquote class="cite-image" cite="urn:cite:hmt:vaimg.VA012RN-0013@0.25,0.25,0.25,0.25">urn:cite:hmt:vaimg.VA012RN-0013@0.25,0.25,0.25,0.25 (default service)</blockquote>
+
+<h3>Named Service - width 8000</h3>
+<blockquote class="cite-image svc-beta-image-big" cite="urn:cite:hmt:vaimg.VA012RN-0013@0.125,0.125,0.125,0.125">urn:cite:hmt:vaimg.VA012RN-0013@0.25,0.25,0.25,0.25 (named service)</blockquote>
+
+<h3>Named Service - width 8000</h3>
+<blockquote class="cite-image svc-folio-image-big" cite="urn:cite:fufolioimg:Caroliniana.Catesby_HS212_003_0509@0.125,0.125,0.125,0.125">urn:cite:fufolioimg:Caroliniana.Catesby_HS212_003_0509@0.25,0.25,0.25,0.25 (named service)</blockquote>
+
+<ul id="citekit-sources">
+	<!-- Beta Server in Houston: citeservlet -->
+    <li class="citekit-source cite-image citekit-default" id="svc-beta-image">http://beta.hpcc.uh.edu/tomcat/hmtcite/images</li>
+    <li class="citekit-source cite-image " data-image-w="8000" id="svc-beta-image-big">http://beta.hpcc.uh.edu/tomcat/hmtcite/images</li>
+    <li class="citekit-source cite-image " data-image-w="600" id="svc-beta-image-small">http://beta.hpcc.uh.edu/tomcat/hmtcite/images</li>
+	<!-- Folio Server at Furman: citeservlet -->
+    <li class="citekit-source cite-image" data-image-w="8000" id="svc-folio-image-big">http://folio.furman.edu/foliocite/images</li>
+    <li class="citekit-source cite-image" data-image-w="600" id="svc-folio-image-small">http://folio.furman.edu/foliocite/images</li>
+</ul>
+
+</div>
+
+
+</body>
+</html>

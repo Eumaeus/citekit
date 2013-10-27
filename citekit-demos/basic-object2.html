@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>CITEKit Demo</title>
+	<link type="text/css" rel="stylesheet" href="http://folio.furman.edu/images/swiss.css"/>
+	<script type="text/javascript" src="http://folio.dyndns-web.com/citekit/js/cite-jq.js"> </script>
+	<meta name="copyright" content="2013 C.W. Blackwell, D.N. Smith, CC-License/by-nc-sa/3.0"/>
+	<meta name="encoding" content="UTF-8"/>
+	<meta name="format" content="complete"/>
+</head>
+<body>
+
+<h1 id="cite-kit">CITE-Kit Demo · Basic Images</h1>
+
+<p>For this demo, we've defined two collection-services. One of them has no image-, cts-, or collection-services defined for resolving URNs in its fields. CITEKit should use the default ones.</p>
+
+<h2>Links</h2>
+<p>Link to default collection service: <a href="urn:cite:botcar:catesbyLabels.penLabel94.1" class="cite-collection" >urn:cite:botcar:catesbyLabels.penLabel94.1</a></p>
+
+<h2>Resolved Citations</h2>
+
+<h3>Default Service</h3>
+<blockquote class="cite-collection" cite="urn:cite:botcar:catesbyLabels.penLabel94.1">urn:cite:botcar:catesbyLabels.penLabel94.1 (default service)</blockquote>
+
+<h3>Named Service</h3>
+<blockquote class="cite-collection other-coll-svc" cite="urn:cite:botcar:catesbyLabels.penLabel94.1">urn:cite:botcar:catesbyLabels.penLabel94.1 (named service)</blockquote>
+
+<ul id="citekit-sources">
+	<!-- Default Folio Server at Furman: citeservlet -->
+	<li class="citekit-source cite-text citekit-default" id="svc-folio-cts">http://folio.furman.edu/foliocite/texts</li>
+    <li class="citekit-source cite-image citekit-default" id="svc-folio-image">http://folio.furman.edu/foliocite/images</li>
+	<li class="citekit-source cite-collection svc-folio-image svc-folio-collection svc-folio-cts citekit-default" id="svc-folio-collection">http://folio.furman.edu/foliocite/collections</li>
+	<!-- Named Folio Server at Furman: citeservlet -->
+	<li class="citekit-source cite-collection" id="other-coll-svc">http://folio.furman.edu/foliocite/collections</li>
+</ul>
+
+</div>
+
+
+</body>
+</html>

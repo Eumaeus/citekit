@@ -1,0 +1,295 @@
+
+@namespace xml "http://example.com/q-markup";
+
+#citekit-sources {
+	display: none;
+}
+
+blockquote.cite-coll p, blockquote.cite-cts p, blockquote.cite-img p {
+	font-style: normal;
+	line-height: 1.2em;
+}
+
+blockquote.cite-coll, blockquote.cite-cts, blockquote.cite-img {
+	border: 1px solid #eee;
+	display: inline-block;
+	padding: 0.5em;
+	margin: 0;
+}
+
+div.citekit-compare {
+		clear: both;
+		height: auto;
+		overflow: auto;
+}
+
+div.citekit-compare > p, div.citekit-compare > blockquote {
+		min-width: 30%;
+}
+
+div.citekit-compare > blockquote {
+		float: left;
+		overflow: auto;
+}
+
+div.citekit-compare > blockquote {
+		display: block;
+}
+
+.citekit-waiting {
+	background-image:url('waiting.gif');
+	background-repeat: no-repeat;
+	height: 1.5em;	
+	width: 256px;
+}
+
+.citekit-error {
+		background: #fee;
+		padding: 3px;
+		border: 1px solid #edd;
+}
+
+.citekit-urncitation {
+	font-size: 80%;
+	color: #aaa;
+}
+
+/*
+----------------------------------
+Handle TEI elements (constructed by getPassage.xsl)
+----------------------------------
+*/
+
+.cts-content{
+	padding: 1em;
+}
+
+.cts-biblio {
+	font-size: 0.8em;
+	line-height: 1em;
+	margin-left: 8em;
+}
+
+.cts-quotation {
+	font-size: 100%;
+	margin-bottom: 0em;
+}
+
+
+[xml|lang=ara] p, [xml|lang=ara] l{
+	text-align: right;
+}
+
+[xml|lang=ara] .tei_l .citation_value{
+	float: right;
+	margin-left: 3em;
+}
+
+[lang=ara] p, [lang=ara] l{
+	text-align: right;
+}
+
+[lang=ara] .tei_l .citation_value, [lang=ara] .tei_lineNumber{
+	float: right;
+	margin-left: 3em;
+	margin-right: -1em;
+}
+
+
+.tei_lineNumber {
+	color: #aaa;
+	background-color:inherit;
+	margin-right: 1em;
+}
+
+
+.tei_section {
+	display: block;
+	padding-top: 0.5em;
+}
+
+.tei_sectionNum:before {
+	content: "§";
+}
+
+.tei_sectionNum {
+	margin-left: 1.5em;
+	padding-right: 1em;
+	display: inline;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	color: maroon;
+}
+
+.tei_section p, .tei_section h3 {
+	margin-left: 1.5em;
+}
+
+
+
+.tei_unclearText {
+	color: grey;
+}
+
+.tei_suppliedText {
+	color: #69C;
+}
+
+
+.tei_sic {
+	color: red;
+}
+
+.tei_corr {
+	color: green;
+}
+
+.tei_abbr {
+	color: blue;
+}
+
+.tei_expan {
+		color: #444;
+}
+
+.tei_bookNumber {
+	display: inline;
+	margin-left: 1.5em;
+	font-weight: bold;
+	color: maroon;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.tei_book {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.title {
+	font-style: oblique;
+}
+
+.supralinearText {
+	color: red;
+	vertical-align: super;
+}
+
+del {
+	text-decoration: line-through;
+	color: red;
+}
+
+.primaryTitle {
+	font-style: oblique;
+}
+
+.note {
+	display: block;
+	width: 40%;
+	font-size: 85%;
+	border-left: 1px solid black;
+	padding-left: 1em;
+}
+
+.fragment {
+	background: blue;
+}
+
+.column {
+
+}
+
+.speaker {
+	font-weight: bold;
+}
+
+p {
+	display: block;
+	line-height: 1.2em;
+}
+	
+bibl:before {
+	content: " (";
+}
+
+bibl {
+	display: block;
+	color: maroon;
+	margin-left: 3em;
+	font-size: 70%;
+	margin-bottom: 1em;
+	}
+
+bibl:after {
+	content: ") ";
+}
+
+.note bibl {
+	display: inline;
+	color: maroon;
+	margin-left: 0em;
+	font-size: 100%;
+	margin-bottom: 0em;
+	}
+
+.note bibl:before {
+	content: "";
+}
+
+.note bibl:after {
+	content: "";
+}
+
+div.tei_section, div.tei_book, body, text, div.tei_section p, div.tei_section p {
+	/* font-family: Gentium,"Palatino Linotype","Lucida Grande","Arial Unicode MS",sans-serif; */
+}
+
+/* Collection CSS */
+
+table.citeCollectionTable {
+	padding: 0.25em;
+	margin: 0.25em;
+	display: block;
+	border: 1px solid silver;
+}
+
+caption.citeCollectionTable {
+	font-weight: bold;
+	border-bottom: 1px solid silver;
+	padding-bottom: 0.5em;
+}
+
+td.citeCollectionTable, th.citeCollectionTable {
+	padding-right: 0.5em;
+	margin-right: 0.5em;
+	margin-left: 0.5em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+}
+
+tr.citeCollectionTable:nth-child(odd){
+	background-color: #ddd;
+}
+
+tr.citeCollectionTable:nth-child(1) {
+	background-color: maroon;
+	color: white;
+}
+
+
+/* Image stuff */
+
+div.citeimagediv {
+	padding: 0.25em;
+	margin: 0.25em;
+	display: block;
+	width: auto;
+}
+
+div.citeimagecaption {
+	font-size: 85%;
+/*	width: 600px; */
+}
+
+
