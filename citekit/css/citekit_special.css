@@ -181,7 +181,7 @@ span.tei_add:after {
 	font-style: oblique;
 }
 
-.supralinearText {
+.tei_supralinearText {
 	color: red;
 	vertical-align: super;
 }
