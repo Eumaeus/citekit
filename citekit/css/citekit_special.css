@@ -125,6 +125,17 @@ Handle TEI elements (constructed by getPassage.xsl)
 	margin-left: 1.5em;
 }
 
+span.tei_add {
+		color: maroon;
+}
+
+span.tei_add:before {
+		content: "⸌";
+}
+span.tei_add:after {
+		content: "⸍";
+}
+
 
 
 .tei_unclearText {
