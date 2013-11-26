@@ -6,6 +6,7 @@
     <xsl:param name="ImageServiceThumb"></xsl:param>
     <xsl:param name="TextServiceGPP"></xsl:param>
     <xsl:param name="CollectionServiceGOP"></xsl:param>
+    <xsl:param name="image-w"></xsl:param>
     <xsl:output method="html" omit-xml-declaration="yes"/>
     
     <!-- Alert!!!!!! Before doing more on this, update based on the stylesheet in citeservlet, of the same name -->
@@ -68,7 +69,7 @@
                                     <xsl:element name="a">
                                         <xsl:attribute name="href"><xsl:value-of select="$ImageServiceGIP"/><xsl:value-of select="."/></xsl:attribute>
                                         <xsl:element name="img">
-                                            <xsl:attribute name="src"><xsl:value-of select="$ImageServiceThumb"/><xsl:value-of select="."/></xsl:attribute>
+                                            <xsl:attribute name="src"><xsl:value-of select="$ImageServiceThumb"/><xsl:value-of select="."/>&amp;w=<xsl:value-of select="$image-w"/></xsl:attribute>
                                         </xsl:element>
                                     </xsl:element>
                                 </xsl:if>

@@ -76,7 +76,7 @@ function citekit_compare(){
 				var newWidth = Math.round(100 / howManyKids);
 				newWidth = Math.round( newWidth - (newWidth / 10));
 				$(this).children().each(function(index){
-						$(this).css("max-width", newWidth + "%");
+						$(this).css("max-width", (newWidth - 10) + "%");
 				});
 		});
 }
@@ -212,7 +212,7 @@ function getCollectionParams( elementId ){
 			}
 		}
 
-		//Get any assigned text service
+		//Get any assigned collection service
 		for (whichCollService in citekit_var_services){
 			if ( $("#" + whichCollService).hasClass( citekit_var_classNames["cite"])){
 				if ( $("#" + thisService).hasClass(whichCollService)  ){
@@ -224,7 +224,8 @@ function getCollectionParams( elementId ){
 		if (thisImgSvc == ""){ thisImgSvc = citekit_var_default_img; }
 		if (thisCtsSvc == ""){ thisCtsSvc = citekit_var_default_cts; }
 		if (thisCollSvc == ""){ thisCollSvc = citekit_var_default_coll; }
-		returnValue["imageService"] = citekit_var_services[thisImgSvc];
+	    returnValue["image-w"] = citekit_image_w[thisImgSvc];	
+        returnValue["imageService"] = citekit_var_services[thisImgSvc];
 		returnValue["collectionService"] = citekit_var_services[thisCollSvc];
 		returnValue["ctsService"] = citekit_var_services[thisCtsSvc];
 		return returnValue;
