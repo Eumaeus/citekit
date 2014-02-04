@@ -2,6 +2,9 @@
 /* Console */
 
 .citekit_console_show_hide_toggle, .citekit_console > p {
+        font-family: Helvetica, sans-serif;
+        font-weight: 300;
+        font-size: 12pt;
 }
 
 .citekit_console {
