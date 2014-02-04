@@ -22,7 +22,9 @@ function bootstrap(){
 							// Get the root url of this script
 							var jsURL = ($(this)[0].url);
 							var rootURL = jsURL.substring(0,jsURL.indexOf('/js'));
+                            console.log ("Getting CSS: " + rootURL);
 							var newCssURL = rootURL + "/css/citekit-utils.css";;
+                            console.log("From: " + newCssURL);
 								$('<style type="text/css">\n@import url(' + newCssURL + ');').appendTo("head");
 								citekit_init();
 								// Below is the old block that loaded CSS by a costly and janky Ajax call, utterly unnecessarily;
@@ -94,6 +96,8 @@ function citekit_loadMoreCSS(){
 	//var jsURL = (lastScript.src);
 	var rootURL = jsURL.substring(0,jsURL.indexOf('/js'));
 	var cssURL = rootURL + "/css/cite-elements.css";
+	$('head').append('<link rel="stylesheet" href="' + cssURL + '" type="text/css" />');
+	cssURL = rootURL + "/css/citekit-utils.css";
 	$('head').append('<link rel="stylesheet" href="' + cssURL + '" type="text/css" />');
 }
 
