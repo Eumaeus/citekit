@@ -21,15 +21,24 @@ div.citekit-compare {
 		clear: both;
 		height: auto;
 		overflow: auto;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+        box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 div.citekit-compare > p, div.citekit-compare > blockquote {
-		min-width: 30%;
+		min-width: 25%;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+        box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 div.citekit-compare > blockquote {
 		float: left;
 		overflow: auto;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+        box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 div.citekit-compare > blockquote {
@@ -123,17 +132,6 @@ Handle TEI elements (constructed by getPassage.xsl)
 
 .tei_section p, .tei_section h3 {
 	margin-left: 1.5em;
-}
-
-span.tei_add {
-		color: maroon;
-}
-
-span.tei_add:before {
-		content: "⸌";
-}
-span.tei_add:after {
-		content: "⸍";
 }
 
 

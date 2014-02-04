@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>CITEKit Tester</title>
+	<script type="text/javascript" src="http://folio.dyndns.web.com/citekit/js/cite-jq.js"> </script>
+	<meta name="copyright" content="2013 C.W. Blackwell, D.N. Smith, CC-License/by-nc-sa/3.0"/>
+</head>
+<body>
+
+<h1 id="cite-kit">CITE-Kit Tester · Compare Three Texts </h1>
+
+
+<h3>Default Service</h3>
+<div class="citekit-compare">
+        <blockquote class="cite-text" cite="urn:cts:greekLit:tlg0012.tlg001.msA:4.2">urn:cts:greekLit:tlg0012.tlg001.msA:4.2 (default service)</blockquote>
+        <blockquote class="cite-text" cite="urn:cts:greekLit:tlg5026.msA.hmt:4.787"> urn:cts:greekLit:tlg5026.msA.hmt:4.787 (default service)</blockquote>
+        <blockquote class="cite-text" cite="urn:cts:greekLit:tlg5026.msA.hmt:4.786"> urn:cts:greekLit:tlg5026.msA.hmt:4.786 (default service)</blockquote>
+</div>
+
+
+<ul id="citekit-sources">
+	<!-- Beta Server in Houston: citeservlet -->
+    <li class="citekit-source cite-text citekit-default" id="svc-beta-cts">http://beta.hpcc.uh.edu/tomcat/hmtcite/texts</li>
+    <li class="citekit-source cite-image citekit-default" id="svc-beta-image">http://beta.hpcc.uh.edu/tomcat/hmtcite/images</li>
+	<li class="citekit-source cite-collection citekit-default" id="svc-beta-collection">
+			<ul>
+					<li class="citekit-coll-url">http://beta.hpcc.uh.edu/tomcat/hmtcite/collections</li> // url to the collection service
+					<li class="citekit-img-source">svc-beta-image</li> // use this image service to resolve image URNs in collection fields
+					<li class="citekit-coll-source">svc-beta-collection</li> // use this collection service for links to URNs in collection fields
+					<li class="citekit-cts-source">svc-beta-cts</li>// use this text service for links to text URNs in collection fields
+			</ul>
+	</li>
+	<!-- Folio Server at Furman: citeservlet -->
+	<li class="citekit-source cite-text" id="svc-folio-cts">http://folio.furman.edu/citeservlet/texts</li>
+    <li class="citekit-source cite-image" id="svc-folio-image">http://folio.furman.edu/citeservlet/images</li>
+	<li class="citekit-source cite-collection" id="svc-folio-collection">
+			<ul>
+					<li class="citekit-coll-url">http://folio.furman.edu/citeservlet/collections</li>
+					<li class="citekit-img-source">svc-folio-image</li>
+					<li class="citekit-coll-source">svc-folio-collection</li>
+					<li class="citekit-cts-source">svc-folio-cts</li>
+			</ul>
+	</li>
+</ul>
+
+</div>
+
+
+</body>
+</html>
+

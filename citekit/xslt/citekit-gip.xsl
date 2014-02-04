@@ -25,7 +25,7 @@
         </xsl:element>
         </xsl:element>
             <div class="citeimagecaption">
-            <p><xsl:apply-templates select="//cite:urn"/></p>
+            <p class="citekit-urncitation">(<xsl:apply-templates select="//cite:urn"/>)</p>
             <p><xsl:value-of select="//cite:caption"/></p>
             <p><xsl:value-of select="//cite:rights"/></p>
 			<p>

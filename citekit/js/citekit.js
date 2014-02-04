@@ -22,7 +22,7 @@ function bootstrap(){
 							// Get the root url of this script
 							var jsURL = ($(this)[0].url);
 							var rootURL = jsURL.substring(0,jsURL.indexOf('/js'));
-							var newCssURL = rootURL + "/css/citekit.css";;
+							var newCssURL = rootURL + "/css/citekit-utils.css";;
 								$('<style type="text/css">\n@import url(' + newCssURL + ');').appendTo("head");
 								citekit_init();
 								// Below is the old block that loaded CSS by a costly and janky Ajax call, utterly unnecessarily;
@@ -73,7 +73,7 @@ function citekit_init(){
 function citekit_compare(){
 		$("div.citekit-compare").each(function(index){
 				var howManyKids = $(this).children("blockquote").length;
-				var newWidth = Math.round(100 / howManyKids);
+				var newWidth = Math.round(90 / howManyKids);
 				newWidth = Math.round( newWidth - (newWidth / 10));
 				$(this).children().each(function(index){
 						$(this).css("max-width", (newWidth - 10) + "%");
@@ -93,7 +93,7 @@ function citekit_loadMoreCSS(){
 	}
 	//var jsURL = (lastScript.src);
 	var rootURL = jsURL.substring(0,jsURL.indexOf('/js'));
-	var cssURL = rootURL + "/css/citekit_special.css";
+	var cssURL = rootURL + "/css/cite-elements.css";
 	$('head').append('<link rel="stylesheet" href="' + cssURL + '" type="text/css" />');
 }
 
