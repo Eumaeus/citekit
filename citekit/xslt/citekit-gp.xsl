@@ -110,7 +110,11 @@
 			<xsl:apply-templates/>
 		</div>
 	</xsl:template>
-    
+    <xsl:template match="tei:ref[@type='urn']">
+    	<span class="citekit-urncitation">
+    		<xsl:apply-templates/>
+    	</span>
+    </xsl:template>
     <xsl:template match="tei:seg">
         <xsl:choose>
         <xsl:when test="@n">
