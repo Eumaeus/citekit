@@ -22,9 +22,9 @@ function bootstrap(){
 							// Get the root url of this script
 							var jsURL = ($(this)[0].url);
 							var rootURL = jsURL.substring(0,jsURL.indexOf('/js'));
-                            console.log ("Getting CSS: " + rootURL);
+                            //console.log ("Getting CSS: " + rootURL);
 							var newCssURL = rootURL + "/css/citekit-utils.css";;
-                            console.log("From: " + newCssURL);
+                            //console.log("From: " + newCssURL);
 								$('<style type="text/css">\n@import url(' + newCssURL + ');').appendTo("head");
 								citekit_init();
 								// Below is the old block that loaded CSS by a costly and janky Ajax call, utterly unnecessarily;
@@ -50,7 +50,7 @@ function bootstrap(){
 }
 
 function citekit_init(){
-	citekit_init_console(); // inject a <div> for showing citekit messages
+	//citekit_init_console(); // inject a <div> for showing citekit messages
 	citekit_loadMoreCSS();
 	var getData = citekit_data(); // grab and sort out service IDs and URLs
 	if (getData){
@@ -102,10 +102,10 @@ function citekit_loadMoreCSS(){
 }
 
 function citekit_fixImgs(){
-	citekit_log( "Fixing imgs now..." );		
+	//citekit_log( "Fixing imgs now..." );		
 	jqString = "img." + citekit_var_classNames["citeimg"];
 	$( jqString ).each(function(index){
-			citekit_log( $(this).attr("src"));
+			//citekit_log( $(this).attr("src"));
 			var urnString = $(this).attr("src");
 			var classString = $(this).attr("class");
 			var idString = $(this).attr("id");
@@ -116,7 +116,7 @@ function citekit_fixImgs(){
 }
 
 function citekit_fixBlockquotes(){
-	citekit_log( "Fixing blockquotes..." );		
+	//citekit_log( "Fixing blockquotes..." );		
 
 
 	for (whichClass in citekit_var_classNames){
@@ -361,7 +361,7 @@ function citekit_getXSLTString( elementId ){
 
 	
 function citekit_fixLinks(){
-	citekit_log( "Fixing links..." );
+	//citekit_log( "Fixing links..." );
 	for (whichClass in citekit_var_classNames){
 			var className = citekit_var_classNames[whichClass];
 			var jqString = "a." + className;
@@ -441,7 +441,7 @@ function citekit_getUrlString( elementId ){
 
 
 function citekit_loadObjects(){
-	citekit_log("Loading objects...");
+	//citekit_log("Loading objects...");
 	for ( whichClass in citekit_var_classNames){
 		var className = citekit_var_classNames[whichClass];
 		$("." + className).each(function(index){
@@ -480,7 +480,7 @@ function citekit_loadObjects(){
 }
 
 function citekit_assignIds(){
-	citekit_log("assigning IDs now");	
+	//citekit_log("assigning IDs now");	
 	for ( whichClass in citekit_var_classNames){
 		var className = citekit_var_classNames[whichClass];
 		$('blockquote.' + className).each(function(index){
@@ -522,7 +522,7 @@ function citekit_init_console(){
                     async: false
                      }).responseText;	
 	$("#citekit_console_head").html(stringData);
-	citekit_log("Console initiated.");
+	//citekit_log("Console initiated.");
 }
 
 function citekit_data(){
@@ -530,8 +530,8 @@ function citekit_data(){
 	
 	// Read sources, defaults, etc. from sourcefile
 	if ( $('#citekit-sources').length > 0 ){
-		citekit_log("Getting services...");
-		citekit_log("Getting CTS Services...");
+		//citekit_log("Getting services...");
+		//citekit_log("Getting CTS Services...");
 		$('#citekit-sources > .citekit-source').each(function(){
 				if ($(this).hasClass(citekit_var_classNames["cts"])){
 					var this_id = $(this).attr("id");
@@ -542,7 +542,7 @@ function citekit_data(){
 						}
 				}
 		});
-		citekit_log("Getting Image Services...");
+		//citekit_log("Getting Image Services...");
 		$('#citekit-sources > .citekit-source').each(function(){
 				if ($(this).hasClass(citekit_var_classNames["citeimg"])){
 					var this_id = $(this).attr("id");
@@ -562,7 +562,7 @@ function citekit_data(){
 					}
 				}
 		});
-		citekit_log("Getting Collection Services...");
+		//citekit_log("Getting Collection Services...");
 		$('#citekit-sources > .citekit-source').each(function(){
 				if ($(this).hasClass(citekit_var_classNames["cite"])){
 					var this_id = $(this).attr("id");
@@ -619,20 +619,20 @@ function citekit_data(){
 
 
 	} else {
-		citekit_log("<span style='color:red;'>No services configured in source file!</span>");
+		//citekit_log("<span style='color:red;'>No services configured in source file!</span>");
 		dataOk = false;
 	}
 	//Data checking
 	if ( citekit_var_default_cts == "") {
-			citekit_log("<span style='color:red;'>No default CTS Service assigned!</span");
+			//citekit_log("<span style='color:red;'>No default CTS Service assigned!</span");
 //			dataOk = false;
 	}
 	if ( citekit_var_default_img == "") {
-			citekit_log("<span style='color:red;'>No default Image Service assigned!</span");
+			//citekit_log("<span style='color:red;'>No default Image Service assigned!</span");
 //			dataOk = false;
 	}
 	if ( citekit_var_default_coll == "") {
-			citekit_log("<span style='color:red;'>No default Collection Service assigned!</span");
+			//citekit_log("<span style='color:red;'>No default Collection Service assigned!</span");
 //			dataOk = false;
 	}
 
@@ -655,7 +655,7 @@ function citekit_data(){
 	message = message + "<strong>Default Collection Service: " + citekit_var_default_coll + "</strong><br/>";
 
 	$(".citekit_console_data").html(message);
-	citekit_log("Data loaded: " + dataOk);
+	//citekit_log("Data loaded: " + dataOk);
 	return dataOk;
 }
 
