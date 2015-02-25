@@ -105,6 +105,9 @@
 			<xsl:apply-templates/>
 		</div>
 	</xsl:template>
+    <xsl:template match="tei:w">
+        <xsl:apply-templates/><xsl:text> </xsl:text>
+    </xsl:template>
 	<xsl:template match="tei:div[@type='col']">
 		<div class="tei_column">
 			<xsl:apply-templates/>

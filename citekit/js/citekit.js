@@ -14,38 +14,23 @@ function bootstrap(){
 	var url = rootURL + "/js/markdown.js";
 	  $.getScript(url, function(data, textStatus, jqxhr) {
 					// Get the root url of this script
-					var jsURL = ($(this)[0].url);
-					var rootURL = jsURL.substring(0,jsURL.indexOf('/js'));
-					var url = rootURL + "/js/sarissa/sarissa.js";
-					$.getScript(url, function(data, textStatus, jqxhr) {
+					//var jsURL = ($(this)[0].url);
+					//var rootURL = jsURL.substring(0,jsURL.indexOf('/js'));
+					//var url = rootURL + "/js/sarissa/sarissa.js";
+					//$.getScript(url, function(data, textStatus, jqxhr) {
 						//load css first, then print <link> to header, and execute callback
 							// Get the root url of this script
 							var jsURL = ($(this)[0].url);
 							var rootURL = jsURL.substring(0,jsURL.indexOf('/js'));
-                            //console.log ("Getting CSS: " + rootURL);
-							var newCssURL = rootURL + "/css/citekit-utils.css";;
-                            //console.log("From: " + newCssURL);
-								$('<style type="text/css">\n@import url(' + newCssURL + ');').appendTo("head");
-								citekit_init();
-								// Below is the old block that loaded CSS by a costly and janky Ajax call, utterly unnecessarily;
-								// the two lines above seem to work just as well.
-								
-/*
-						$.ajax({
-							url: newCssURL,
-							dataType: 'text/css',
-							success: function(data){                  
-								$('<style type="text/css">\n' + data + '</style>').appendTo("head");
-								//Begin actual processing of CITE/CTS links in document
-								citekit_init();
-							},
-								 error: function(XMLHttpRequest, textStatus, errorThrown) { 
-											 alert("Status: " + textStatus); 
-							 }    
-						});
-*/
+							var newCssURL = rootURL + "/css/citekit-utils.css";
+							$('<style type="text/css">\n@import url(' + newCssURL + ');').appendTo("head");
+								//Get leaflet Stuff
+								var url = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js";
+							    $.getScript(url, function(data, textStatus, jqxhr) {
+								     citekit_init();
+								});
 
-					});
+					//});
 	  });
 }
 
@@ -171,7 +156,6 @@ function getImageParams( elementId ){
 		thisPath = citekit_var_services[thisService].substr(0, citekit_var_services[thisService].indexOf('/image'));
 		thisICT = thisPath + "/" + citekit_var_qs_ICT;
 		returnValue["image-w"] = citekit_image_w[thisService];
-	console.log( elementId + " :: service=" + thisService + " :: citekit_image_w=" + citekit_image_w[thisService]);
 		//console.log ("Returning width = " + returnValue["image-w"]);
 		returnValue["ict"] = thisICT;
 		return returnValue;
@@ -328,11 +312,13 @@ function citekit_processXML(ctsResponse, xsltData, elemId, xsltParams){
 }
 
 
+
 function citekit_putTextOntoPage(htmlText, elemId){
 	document.getElementById(elemId).innerHTML = htmlText;
 	$("#" + elemId).removeClass("citekit-waiting");
 	// Catch any Markdown fields
 	citekit_processMarkdown(elemId);
+	citekit_processGeoJSON(elemId);
 	$("#" + elemId).addClass("citekit-complete");
 }
 
@@ -674,4 +660,63 @@ function citekit_processMarkdown(elemId){
 	});
 }
 
+function citekit_processGeoJSON(elemId){
+	$(".geojson").each( function(i) {
+			$(this).removeClass("geojson");
+		var jsonText = $(this).html().trim();
+		//console.log( $(this).attr("id"));
+		mapId = $(this).attr("id");
+		var geoObject = JSON.parse(jsonText);
+
+
+		var cLong =   geoObject.reprPoint[0] ;
+		var cLat =  geoObject.reprPoint[1] ;
+
+		var map;
+		map = new L.Map( mapId );
+    // create the tile layer with correct attribution
+	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+	var osm = new L.TileLayer(osmUrl, {minZoom: 2, maxZoom: 12, attribution: osmAttrib});		
+
+	// start the map 
+	map.setView(new L.LatLng(cLat, cLong),4);
+	map.addLayer(osm);
+
+	//Add some features
+	
+	for (val in geoObject.features){
+			if ( !(geoObject.features[val].geometry === void 0) ){
+					var thisType = geoObject.features[val].geometry.type 
+							switch(thisType){
+									case 'Point':
+											var tempMarker = new L.marker([geoObject.features[val].geometry.coordinates[1], geoObject.features[val].geometry.coordinates[0]]);
+											tempMarker.bindPopup(geoObject.title);
+											tempMarker.addTo(map);
+											break;
+									case 'Polygon':
+											var tempCoords = geoObject.features[val].geometry.coordinates[0];
+											var newCoords = []
+													for (pair in tempCoords){
+														var newPair = [];
+												        newPair.push(tempCoords[pair][1]);
+														newPair.push(tempCoords[pair][0]);
+														newCoords.push(newPair);
+													}
+											var tempPoly = new L.polygon(newCoords);
+											tempPoly.bindPopup(geoObject.title);
+											tempPoly.addTo(map);
+											break;
+							}
+			}
+	}
+
+
+
+		
+
+		//$(this).html("geojson goes here.");
+		
+	});
+}
 

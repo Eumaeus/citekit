@@ -40,31 +40,42 @@
                         <xsl:value-of select="current()/@label"/>
                 </xsl:element>
                     <xsl:element name="td">
-                        <xsl:attribute name="class">citeCollectionTable</xsl:attribute>
+                        
                         
                         <xsl:choose>
                             <xsl:when test="@type = 'string'">
+                                <xsl:attribute name="class">citeCollectionTable</xsl:attribute>
                                 <xsl:value-of select="."/>
                             </xsl:when>
                             <xsl:when test="@type = 'markdown'">
+                                <xsl:attribute name="class">citeCollectionTable</xsl:attribute>
                                 <span class="md"><xsl:value-of select="."/></span>
                             </xsl:when>
                             <xsl:when test="@type = 'number'">
+                                <xsl:attribute name="class">citeCollectionTable</xsl:attribute>
                                 <span class="number"><xsl:value-of select="."/></span>
                             </xsl:when>
+                            <xsl:when test="@type = 'geojson'">
+                                <xsl:attribute name="class">citeCollectionTable geojson</xsl:attribute>
+                                <xsl:attribute name="id"><xsl:value-of select="generate-id()"/></xsl:attribute>
+                                <xsl:value-of select="."/>
+                            </xsl:when>
                             <xsl:when test="(@type = 'ctsurn') or (@type= 'http://www.homermultitext.org/cite/rdf/CtsUrn')">
+                                <xsl:attribute name="class">citeCollectionTable</xsl:attribute>
                                 <xsl:element name="a">
                                     <xsl:attribute name="href"><xsl:value-of select="$TextServiceGPP"/><xsl:value-of select="."/></xsl:attribute>
                                     <xsl:apply-templates/>
                                 </xsl:element>
                             </xsl:when>
                             <xsl:when test="@type= 'http://www.homermultitext.org/cite/rdf/CiteUrn'">
+                                <xsl:attribute name="class">citeCollectionTable</xsl:attribute>
                                 <xsl:element name="a">
                                     <xsl:attribute name="href"><xsl:value-of select="$CollectionServiceGOP"/><xsl:value-of select="."/></xsl:attribute>
                                     <xsl:apply-templates/>
                                 </xsl:element>
                             </xsl:when>
                             <xsl:when test="@type= 'citeimg'">
+                                <xsl:attribute name="class">citeCollectionTable</xsl:attribute>
                                 <xsl:if test="string-length(.) &gt; 6">
                                     <xsl:element name="a">
                                         <xsl:attribute name="href"><xsl:value-of select="$ImageServiceGIP"/><xsl:value-of select="."/></xsl:attribute>
@@ -75,7 +86,8 @@
                                 </xsl:if>
                             </xsl:when>
                             <xsl:when test="@type= 'md'">
-                                <xsl:value-of select="."/> (md)
+                                <xsl:attribute name="class">citeCollectionTable md</xsl:attribute>
+                                <xsl:value-of select="."/> 
                             </xsl:when>
                             
                             

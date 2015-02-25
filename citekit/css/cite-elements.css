@@ -282,7 +282,7 @@ tr.citeCollectionTable:nth-child(odd){
 }
 
 tr.citeCollectionTable:nth-child(1) {
-	background-color: maroon;
+	background-color: #aab;
 	color: white;
 }
 
